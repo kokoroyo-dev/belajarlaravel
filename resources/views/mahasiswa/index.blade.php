@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title','mahasiswa page')
-@section('bread1','mahasiswa')
-@section('bread2','data')
+@section('title','Mahasiswa page')
+@section('bread1','Mahasiswa')
+@section('bread2','Data')
 @section('content')
 
-<h3>master data mahasiswa</h3>
-<p><a href="/mhs/create" class="btn btn-success btn-sm">tambah</a></p>
+<h3>Master Data Mahasiswa</h3>
+<p><a href="/mhs/create" class="btn btn-success btn-sm">+ Tambah</a></p>
 
 
 @include('layouts.alert')

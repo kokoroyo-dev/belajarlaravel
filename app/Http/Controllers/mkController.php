@@ -14,8 +14,8 @@ class mkController extends Controller
      */
     public function index()
     {
-        $list_matakuliah = matakuliah::all();
-        return view('matakuliah.index',compact('list_matakuliah'));
+        $mk = matakuliah::all();
+        return view('matakuliah.index',compact('mk'));
     }
 
     /**
@@ -25,7 +25,7 @@ class mkController extends Controller
      */
     public function create()
     {
-        //
+        return view('matakuliah.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class mkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['kode_mk'=>'required|digits:5','nama_mk'=>'required']);
+        matakuliah::create($request->all());
+        return redirect()->route('matakuliah.index')->with('success','data berhasil ditambahkan');
     }
 
     /**
@@ -45,7 +47,7 @@ class mkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(matakuliah $matakuliah)
     {
         //
     }
@@ -58,7 +60,8 @@ class mkController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mk=matakuliah::find($id);
+        return view('matakuliah.edit',compact('mk'));
     }
 
     /**
@@ -70,7 +73,14 @@ class mkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mk=matakuliah::find($id);
+        $mk->kode_mk= $request->input('kode_mk');
+        $mk->nama_mk= $request->input('nama_mk');
+        $mk->sks= $request->input('sks');
+        $mk->semester= $request->input('semester');
+        $mk->save();
+        return redirect('/');
+           
     }
 
     /**
@@ -81,6 +91,8 @@ class mkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mk=matakuliah::find($id);
+        $mk->delete();
+        return redirect('/');
     }
 }

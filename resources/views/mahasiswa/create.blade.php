@@ -1,17 +1,17 @@
 @extends('layouts.app')
-@section('title','mahasiswa page')
-@section('bread1','mahasiswa')
+@section('title','Mahasiswa page')
+@section('bread1','Mahasiswa')
 @section('bread2','Data')
 @section('content')
 
-<h3>Form Mahasiswa</h3><hr>
+<h3>Form Tambah Mahasiswa</h3><hr>
 @include('layouts.alert')
 
 <form action="/mhs/store" method="POST">
 	@csrf
 
 	<div class="form-group row">
-		<label for="nim" class="col-sm-12">NIM</label>
+		<label for="nim" class="col-sm-12">Nim</label>
 		<div class="col-sm-3">
 			<input type="text" name="nim" class="form-control" id="nim" placeholder="nomor induk mahasiswa">
 			@error('nim')

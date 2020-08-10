@@ -24,8 +24,8 @@ class mahasiswa1Controller extends Controller
     {
         $mhs =mahasiswa::with('mprodi')->get();
         return DataTables::of($mhs)->addIndexColumn()->addColumn('action',function($mhs){
-            $action = '<a class = "text-primary" href="/mhs/edit/'.$mhs->nim.'">edit</a>';
-            $action .= ' | <a class = "text-danger" href = "/mhs/delete/'.$mhs->nim.'">hapus</a>';
+            $action = '<button class="btn btn-primary btn-sm"><a class = "text-light" href="/mhs/edit/'.$mhs->nim.'">Edit</a></button>';
+            $action .= '   <button class="btn btn-danger btn-sm"><a class = "text-light" href = "/mhs/delete/'.$mhs->nim.'">Hapus</a></button>';
         return $action;
         })->make();
     }

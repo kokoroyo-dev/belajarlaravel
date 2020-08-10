@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title','dosen page')
-@section('bread1','dosen')
-@section('bread2','data')
+@section('title','Dosen page')
+@section('bread1','Dosen')
+@section('bread2','Data')
 @section('content')
 
-<h3>form dosen</h3>
+<h3>Form Update Data Dosen</h3>
 
 @include('layouts.alert')
 

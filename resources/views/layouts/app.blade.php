@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 	<script src="{{asset('js/app.js')}}"></script>
 	<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<style>
+		body
+		{
+			background-image: url({{asset('img/b1.png')}});
+		}
+	</style>
 
 </head>
 <body>
@@ -18,7 +24,7 @@
 			<div class="col-md-3">
 				@include('layouts.sidebar')
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9" style="background-color: white;" >
 				@include('layouts.breadcrumb')
 				@yield('content')
 			</div>

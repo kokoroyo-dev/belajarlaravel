@@ -16,7 +16,8 @@ class CreateMatakuliahTable extends Migration
         Schema::create('matakuliah', function (Blueprint $table) {
             $table->integer('kode_mk')->primary();
             $table->string('nama_mk',30);
-            $table->string('sks',100);
+            $table->integer('sks');
+            $table->string('semester',20);
             $table->timestamps();
         });
     }

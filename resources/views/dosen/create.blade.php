@@ -1,17 +1,17 @@
 @extends('layouts.app')
-@section('title','dosen page')
-@section('bread1','dosen')
+@section('title','Dosen page')
+@section('bread1','Dosen')
 @section('bread2','Data')
 @section('content')
 
-<h3>Form dosen umt</h3><hr>
+<h3>Form Tambah Dosen</h3><hr>
 @include('layouts.alert')
 
 <form action="/dsn/store" method="POST">
 	@csrf
 
 	<div class="form-group row">
-		<label for="nid" class="col-sm-12">NID</label>
+		<label for="nid" class="col-sm-12">Nid</label>
 		<div class="col-sm-3">
 			<input type="text" name="nid" class="form-control" id="nid" placeholder="nomor induk dosen">
 			@error('nid')

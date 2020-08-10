@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title','mahasiswa page')
-@section('bread1','mahasiswa')
-@section('bread2','data')
+@section('title','Mahasiswa page')
+@section('bread1','Mahasiswa')
+@section('bread2','Data')
 @section('content')
 
-<h3>form mahasiswa</h3>
+<h3>Form Update Mahasiswa</h3>
 
 @include('layouts.alert')
 

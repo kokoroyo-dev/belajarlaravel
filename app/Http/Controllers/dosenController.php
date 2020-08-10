@@ -23,8 +23,8 @@ class dosenController extends Controller
     {
         $dsn =dosen::with('mmatak')->get();
         return DataTables::of($dsn)->addIndexColumn()->addColumn('action',function($dsn){
-            $action = '<a class = "text-primary" href="/dsn/edit/'.$dsn->nid.'">edit</a>';
-            $action .= ' | <a class = "text-danger" href = "/dsn/delete/'.$dsn->nid.'">hapus</a>';
+            $action = '<button class="btn btn-primary btn-sm"><a class = "text-light" href="/dsn/edit/'.$dsn->nid.'">Edit</a></button>';
+            $action .= '   <button class="btn btn-danger btn-sm"><a class = "text-light" href = "/dsn/delete/'.$dsn->nid.'">Hapus</a></button>';
         return $action;
         })->make();
     }
